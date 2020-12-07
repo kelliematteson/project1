@@ -1,3 +1,15 @@
 body {
-    background-color: lightcoral;
+    background-color: whitesmoke;
+}
+#questions {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+}
+.card {
+    width: 80px;
+    height: 100px;
+    background: linear-gradient(45deg, #e66465, #9198e5);
+    border: 2px solid black;
+    border-radius: 5px;
 }

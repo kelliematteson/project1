@@ -35,5 +35,11 @@ const $cards = $('.card').on('click', (event)=>{
     }
     
   }
-  startGame();
+  //startGame();
+  
+  const babyArray = ['You forgot the baby!','You sold the baby on amazon!', 'You sewed the baby a sweater!','You had extra diapers in the fridge!']
+  
+
+  
+
 })

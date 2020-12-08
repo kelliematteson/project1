@@ -83,14 +83,14 @@ div.babyOnTheGo {
   animation-iteration-count: infinite;
 }
 @keyframes baby-on-the-go {
-  0% {
-    left: 0;
+  0%, 100% {
+    top: 0;
+    bottom: auto;
   }
+
   50% {
-    left: 720px;
-  }
-  100% {
-    left: 0;
+    bottom: 0%;
+    top: auto;
   }
 
 }

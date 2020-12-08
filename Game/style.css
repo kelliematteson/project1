@@ -1,15 +1,96 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+  }
 body {
     background-color: whitesmoke;
 }
-#questions {
-    display: flex;
-    justify-content: center;
-    width: 75%;
+h1, h2 {
+    text-align: center;
 }
+#questions {
+    -webkit-box-flex: 1;
+    flex: 1;
+    position: relative;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    flex-direction: row;
+}
+
 .card {
-    width: 80px;
-    height: 100px;
+    width: 15%;
+    height: 30vh;
+    margin: auto;
     background: linear-gradient(45deg, #e66465, #9198e5);
     border: 2px solid black;
     border-radius: 5px;
+    
+}
+.card .choice-result {
+    display: none;
+}
+.card.active .choice-result {
+    display: block;
+    font-size: 2vw;
+    text-align: center;
+   
+
+}
+ /* The Modal (background) */
+ .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  } 
+div.babyOnTheGo {
+  width: 10%;
+  animation-name: baby-on-the-go; 
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+}
+@keyframes baby-on-the-go {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 720px;
+  }
+  100% {
+    left: 0;
+  }
+
 }

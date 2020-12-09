@@ -41,18 +41,51 @@ const $card4 =$('#card4 .choice-result');
     }
     
   }
-  //startGame();
+  // startGame();
   //creating my arrays and getting random choices for each card
-  const badBabyArray = ['you forgot the baby!','you sold the baby on amazon!', 'you lost the baby at Costco!']
-  const goodBabyArray = ['You taught the baby French!','You showed the baby no screen time!', 'You sewed the baby a sweater!']
-  const comboBabyArray = [...badBabyArray, ...goodBabyArray];
-  let randomIndex = Math.floor(Math.random()* comboBabyArray.length);
-  let randomChoice = comboBabyArray[randomIndex];
-  //I need to append a random choice to each card now- the div
-  $card1.append(randomChoice);
-  $card2.append(randomChoice);
-  $card3.append(randomChoice);
-  $card4.append(randomChoice);
+  const badChoice1 = {
+    saying: 'the baby fell in the toilet!',
+    points: -2
+  }
+  const badChoice2 = {
+    saying: 'the baby ate a steak!',
+    points: -2
+  }
+  const badChoice3 = {
+    saying: 'the baby bit the dog!',
+    points: -2
+  }
+  const goodChoice1 = {
+    saying: 'you knit the baby a sweater!',
+    points: 2
+  }
+  const goodChoice2 = {
+    saying: 'you taught the baby spanish!',
+    points: 2
+  }
+  const goodChoice3 = {
+    saying: 'you got the baby into Harvard!',
+    points: 2
+  }
+  const choiceArray =[badChoice1, badChoice2, badChoice3, goodChoice1, goodChoice2, goodChoice3]
+  const aRandomChoice =()=> {
+    let randomChoice = choiceArray[Math.floor(Math.random()* choiceArray.length)]
+    return randomChoice['saying'];
+  }
+ 
   
+  // const badBabyArray = ['you forgot the baby!','you sold the baby on amazon!', 'you lost the baby at Costco!']
+  // const goodBabyArray = ['You taught the baby French!','You showed the baby no screen time!', 'You sewed the baby a sweater!']
+  // const comboBabyArray = [...badBabyArray, ...goodBabyArray];
+  // const eachRandomChoice =()=> {
+  //   let randomChoice = comboBabyArray[Math.floor(Math.random()* comboBabyArray.length)]
+  //   return randomChoice;
+  // }
 
+  //I need to append a random choice to each card now- the div
+  $card1.append(aRandomChoice());
+  $card2.append(aRandomChoice());
+  $card3.append(aRandomChoice());
+  $card4.append(aRandomChoice());
+  
 })

@@ -1,6 +1,7 @@
 
 
 $(()=>{
+  
     // Get the modal
 const modal = document.getElementById("myModal");
 const btn = document.getElementById("myBtn");
@@ -22,7 +23,7 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 } 
-const $cards = $('.card').on('click', (event)=>{
+const $currentCard = $('.card').on('click', (event)=>{
     $(event.currentTarget).toggleClass('active')  
   })
 const $card1 =$('#card1 .choice-result');
@@ -39,16 +40,17 @@ const $card4 =$('#card4 .choice-result');
     } else {
       alert('come back when you are a mature adult!')
     }
-    
   }
+
   // startGame();
   //creating my arrays and getting random choices for each card
+  //yes! created objects for my array and now able to access random key values
   const badChoice1 = {
     saying: 'the baby fell in the toilet!',
     points: -2
   }
   const badChoice2 = {
-    saying: 'the baby ate a steak!',
+    saying: 'the baby when on a shopping spree!',
     points: -2
   }
   const badChoice3 = {
@@ -72,20 +74,11 @@ const $card4 =$('#card4 .choice-result');
     let randomChoice = choiceArray[Math.floor(Math.random()* choiceArray.length)]
     return randomChoice['saying'];
   }
- 
-  
-  // const badBabyArray = ['you forgot the baby!','you sold the baby on amazon!', 'you lost the baby at Costco!']
-  // const goodBabyArray = ['You taught the baby French!','You showed the baby no screen time!', 'You sewed the baby a sweater!']
-  // const comboBabyArray = [...badBabyArray, ...goodBabyArray];
-  // const eachRandomChoice =()=> {
-  //   let randomChoice = comboBabyArray[Math.floor(Math.random()* comboBabyArray.length)]
-  //   return randomChoice;
-  // }
-
   //I need to append a random choice to each card now- the div
   $card1.append(aRandomChoice());
   $card2.append(aRandomChoice());
   $card3.append(aRandomChoice());
   $card4.append(aRandomChoice());
   
+
 })

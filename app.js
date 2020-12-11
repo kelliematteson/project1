@@ -1,34 +1,43 @@
 $(()=>{
 
  const cardArray = [
-    { saying: 'The baby screamed for 4 hours!', points: -2},
-    {saying: 'You and the baby had a great walk!', points: 2},
-    {saying: 'You taught the baby French!', points: 2},
-    {saying: 'You read the baby poetry!', points: 2},
-    {saying: 'You knit the baby a sweater!', points: 2},
-    {saying: 'You made the baby homemade food!', points: 2},
-    {saying: 'The baby destroyed your tv!', points: -2},
-    {saying: 'The baby vomited on you!', points: -2},
-    {saying: 'The baby laughed in your face!', points: -2},
+    { saying: 'The baby screamed for 4 hours!', result: 'BAD'},
+    {saying: 'You taught the baby sign language!', result: 'GOOD'},
+    {saying: 'You taught the baby French!', result: 'GOOD'},
+    {saying: 'You read the baby poetry!', result: 'GOOD'},
+    {saying: 'You knit the baby a sweater!', result: 'GOOD'},
+    {saying: 'You made the baby homemade food!', result: 'GOOD'},
+    {saying: 'The baby destroyed your tv!', result: 'BAD'},
+    {saying: 'The baby vomited on you!', result: 'BAD'},
+    {saying: 'The baby laughed in your face!', result: "BAD"},
   ]
- 
-  
-  
+  //GLOBAL VARIABLES AND DOM NODES
+let points = 0;
 const $score = $('#score');
- const flipCard =(event)=>{
-  $('.cards').on('click', (event) => {
-    $(event.currentTarget).css('background-color','black');
-    
-  }); 
-    updatePoints();
- }
- const updatePoints =()=>{
-   let $currentPoints = $(event.currentTarget).children().eq(1).points;
-   
-   console.log($currentPoints);
 
-}
-//  flipCard(); 
+
+const flipCard =(event)=>{
+  $('.cards').on('click', (event) => {
+    let $currentCard = $(event.currentTarget).css('background-color','black').children().eq(1).val();
+    console.log($currentCard);
+  }); 
+    // updateMentalHealth();
+ } 
+ //I can't get this counter to update the score and replace it's self in the dom
+//  const updateMentalHealth =()=>{
+//    let $currentPoints = cardArray[i].result;
+//     if ($currentPoints === 'BAD') {
+//       points = -2;
+//     } else {
+//       points = 2;
+//     }
+//     $score.append(points);
+//   };
+ 
+
+
+
+
 //Shuffle Cards with Fisher-Yates method
   const createBoard = () =>{
     for (let i= 0; i < cardArray.length; i++) {
@@ -41,19 +50,13 @@ const $score = $('#score');
       let $h2 = $('<h2>').addClass('active');
       $h2.append(cardArray[i].saying);
       let $h3 = $('<h3>').addClass('active');
-      $h3.append(cardArray[i].points);
+      $h3.append(cardArray[i].result);
       $card.on("click", flipCard);
       $card.append($h2);
       $card.append($h3);
-      
-      
-  // card.addEventListener('click', flipCard());
       $grid.append($card);  
-      // addCards();
     } 
   }
-  
- 
   const shuffle =()=> {
     for (i = cardArray.length - 1; i > 0; i--) {
       j = Math.floor(Math.random() * i);
@@ -62,23 +65,8 @@ const $score = $('#score');
       cardArray[j] = k;
     }
     }
-    // const $cards = $('.backCard').on('click', (event)=>{
-    //   $(event.currentTarget).toggleClass('active')
-    //   alert('help');  
-    // })
+
     createBoard();
-  //   const addCards =()=>{
-  //     for(i=0; i<cardArray.length; i++){
-  //       shuffle();
-        
-  //     }
-  //   }
-    
-    
-
-// const $eachCard = $('#babyCard');
-// $eachCard.append(randomElement);
-
 
 //create my parent class
 class Parent {

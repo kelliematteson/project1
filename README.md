@@ -13,6 +13,7 @@
 <h1>Approach
 <h3>Overview: I began sketching out my game and free thinking. Trying to imagine a game that I could translate to code, an idea I had never imagined before. Next, I drew up some wireframes and sketched out what I wanted the screen to look like at differnt points through out the game.
 <h3>Wireframes
+  ![](wireframes.jpg) 
 <h2>User Stories
 <h3>As a User I expect to have a rules module pop up and let me know about the game. I want to see interesting cards to choose from and I'd like to see my score update in the top corner as I select different cards. As a user I want the cards to shuffle and give me fun options for each round.
 <h3>Development Plan

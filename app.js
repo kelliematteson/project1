@@ -1,14 +1,16 @@
+//Restarted this game 3 times, got lost in the code ...will try to recount where I was getting tripped up
+
 $(()=>{
-  //CACHE DOM NODES and start of game and Global variables
+  //CACHE DOM NODES and start of game and Global variables....not all of this goes in the onload function, right?
   let mentalHealth = 0;
   $button = $('#myBtn');
   $grid = $('.grid');
   $result = $('#result');
-  const $modal = $('#modal'); //this is the modal
-  const $textBox = $('#modal-textbox'); //this is the textbox in the modal
-  const $openModal = $('#openModal'); //this is the button that opens the modal
-  const $closeModal = $('#close');  //this is the anchor tag that closes the modal
-    //event handlers
+  const $modal = $('#modal'); 
+  const $textBox = $('#modal-textbox'); 
+  const $openModal = $('#openModal'); 
+  const $closeModal = $('#close');  
+    //event handlers //////////// event Handlers are throughout this code, I wasn't sure why some seemed to break code if I moved them
   const openModal = (event) => {
       $modal.css('display','flex');
     }
@@ -20,6 +22,7 @@ $(()=>{
   $openModal.on('click', openModal);
   $closeModal.on('click',closeModal);
   const $scoreBoard =$result.append(mentalHealth);
+  ///the function that actually starts the game
   startGame= ()=>{
       const answer = prompt('Congrats! You had a baby! Can you make it through the day???', 'Ready to play? Yes or No?');
         if(answer === 'Yes' || answer === 'yes'){
@@ -28,7 +31,7 @@ $(()=>{
           alert('come back when you are a mature adult!');
               }
   }
-  const cardArray = [
+  const cardArray = [ ///I wanted to have 3 different arrays for 3 different rounds...
     {
       saying: 'You taught the baby French!',
       value: 'good'
@@ -53,18 +56,17 @@ $(()=>{
       saying: 'The baby knit you a sweater!',
       value: 'good'
     },
-    
   ]
-  makeGameBoard =()=> {
+  makeGameBoard =()=> { ////this was a nightmare for me, feels unwieldy and I kept breaking things
     for (let i= 0; i < cardArray.length; i++) {
         shuffle();
         let $card = $('<div>');
         $card.attr('id','babyCard');
         $card.addClass('cards');
         $card.attr('data-id', i);
-        let $h2 = $('<h2>').addClass('inactive');
+        let $h2 = $('<h2>').addClass('toggleActive');
         $h2.append(cardArray[i].saying);
-        let $h3 = $('<h3>').addClass('inactive');
+        let $h3 = $('<h3>').addClass('toggleActive');
         $h3.append(cardArray[i].value);
         $card.on("click", flipCard);
         $card.append($h2);
@@ -80,7 +82,8 @@ $(()=>{
       cardArray[j] = k;
     }
     }
-    const flipCard = (event) => {
+    /////// This flipCard function was just endless for me to figure out, and I couldn't figure out how to remove(class)from my now flipped cards
+    const flipCard = (event) => { 
       const $dataId = $(event.currentTarget).data("id");
         let $value = cardArray[$dataId].value;
         if($value === 'bad'){
@@ -94,20 +97,8 @@ $(()=>{
       }
   
         }
-   
-  
-  
-    
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+  //I spent way to much time on the gameboard and then had a heck of a time with a mentalHealth function,
+  //it puts the numbers beside each other. I just ran out of time and started over too many times. I'm bummed.
   
   })
 

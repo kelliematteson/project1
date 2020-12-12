@@ -1,34 +1,21 @@
 
 body {
-  background-image: url('bigTears.jpg');
+  color: white;
+  font-size: 1em;
+  font-family: 'Titillium Web', sans-serif;
+  background-image: url('bigTears.jpg'); 
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
 }
-.button{
-   display:inline-block;
-   padding:0.35em 1.2em;
-   border:0.1em solid #FFFFFF;
-   margin:0 0.3em 0.3em 0;
-   border-radius:0.12em;
-   box-sizing: border-box;
-   text-decoration:none;
-   font-family:'Roboto',sans-serif;
-   font-weight:300;
-   color:#FFFFFF;
-   text-align:center;
-   transition: all 0.2s;
-  }
-  .button:hover{
-   color:#000000;
-   background-color:#FFFFFF;
-  }
-  @media all and (max-width:30em){
-   .button{
-    display:block;
-    margin:0.4em auto;
-   }
-  } 
+h3 {
+  position:absolute;
+  top:80px;
+  right:20px;
+}
+h2, p {
+  color: black;
+}
 #modal{
 	position: fixed;
 	top: 0;
@@ -66,6 +53,10 @@ body {
   border-radius: 25px;
   background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
 }
+#babyCard .active {
+  display: hidden;
+}
+
 .rounds {
 position:absolute;
 top:20px;
@@ -83,9 +74,8 @@ background-color: lightpink;
 }
 
 .baby > * {
-/* Adjust animation duration to change the element’s speed */
-        animation: fly 50s linear infinite;
-        pointer-events: none !important;
+  animation: fly 50s linear infinite;
+  pointer-events: none !important;
 	top: 0;
 	left: 0;
 	transform: translateX(-120%) translateY(-120%) rotateZ(0);
@@ -93,11 +83,6 @@ background-color: lightpink;
 	animation-delay: 1s;
 	z-index: 999999;
 }
-
- /* Keyframe values control where the element will begin
-    and end its trajectory across the screen. Each rule
-    represents a path the element follows across the screen. */
-
 
 @keyframes fly {
 

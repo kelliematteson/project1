@@ -2,6 +2,8 @@ $(()=>{
 //CACHE DOM NODES and start of game and Global variables
 $button = $('#myBtn');
 $grid = $('.grid');
+let mentalHealth = 10;
+$result = $('#result');
 startGame= ()=>{
     const answer = prompt('Congrats! You had a baby! Can you make it through the day???', 'Ready to play? Yes or No?');
       if(answer === 'Yes' || answer === 'yes'){
@@ -54,13 +56,20 @@ const shuffle =()=> {
     const $dataId = $(event.currentTarget).data("id");
       let $value = cardArray[$dataId].value;
       if($value === 'bad'){
-        alert(`Baby wins!`)
+        decreaseScore();
     } else {
-      alert(`The Parent wins!`)
+      increaseScore();
     }
 
       }
-    
+  const increaseScore =()=> {
+    mentalHealth += 2;
+    $result.append(mentalHealth);
+  }
+  const decreaseScore =()=> {
+    mentalHealth -= 2;
+    $result.append(mentalHealth);
+  }
 
 
   

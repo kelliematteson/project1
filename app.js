@@ -30,16 +30,28 @@ $(()=>{
   }
   const cardArray = [
     {
-      saying: 'you forgot the baby',
-      value: 'bad'
-    },
-    {
-      saying: 'you fed the baby',
+      saying: 'You taught the baby French!',
       value: 'good'
     },
     {
-      saying: 'you forgot the baby',
+      saying: 'You explained the Theory of Relativity to the baby!',
+      value: 'good'
+    },
+    {
+      saying: 'The baby vomited on you!',
       value: 'bad'
+    },
+    {
+      saying: 'The baby stole your car!',
+      value: 'bad'
+    },
+    {
+      saying: 'The baby drank your coffee!',
+      value: 'bad'
+    },
+    {
+      saying: 'The baby knit you a sweater!',
+      value: 'good'
     },
     
   ]

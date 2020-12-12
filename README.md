@@ -1,5 +1,5 @@
 <h1>Surviving Baby
-<h3>Remember to add link
+<h3>https://kelliematteson.github.io/project1/
 <h1>Concept:
 <h3>Description of the Game: Surviving Baby is a game of Chance. It's the user against the crazy baby. There are 3 rounds. In each round outcome cards are randomly shuffled and the user must select 3. Each time they experience a Parental WIN or a Baby ATTACK. They gain 2 mental health points or they lose 2 mental health points. By the end of 3 rounds, the User wins IF they have at least 5 mental health points left. The baby is now sleeping peacefully and the parents may consume all the wine they see fit. If the user ends the game with 4 or less mental health points, the baby has clearly won. The baby will be up all night while the parent lays in the hallway, unwashed and devastated.
 <h1>Technologies Used:

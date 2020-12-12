@@ -1,9 +1,25 @@
 $(()=>{
 //CACHE DOM NODES and start of game and Global variables
+let mentalHealth = 0;
 $button = $('#myBtn');
 $grid = $('.grid');
-let mentalHealth = 10;
 $result = $('#result');
+const $modal = $('#modal'); //this is the modal
+const $textBox = $('#modal-textbox'); //this is the textbox in the modal
+const $openModal = $('#openModal'); //this is the button that opens the modal
+const $closeModal = $('#close');  //this is the anchor tag that closes the modal
+  //event handlers
+const openModal = (event) => {
+    $modal.css('display','flex');
+  }
+const closeModal = (event) => {
+    
+    $modal.css('display','none');
+  }
+//event listeners
+$openModal.on('click', openModal);
+$closeModal.on('click',closeModal);
+const $scoreBoard =$result.append(mentalHealth);
 startGame= ()=>{
     const answer = prompt('Congrats! You had a baby! Can you make it through the day???', 'Ready to play? Yes or No?');
       if(answer === 'Yes' || answer === 'yes'){
@@ -56,20 +72,17 @@ const shuffle =()=> {
     const $dataId = $(event.currentTarget).data("id");
       let $value = cardArray[$dataId].value;
       if($value === 'bad'){
-        decreaseScore();
+        alert('The baby won this round!')
+        mentalHealth -= 2;
+        $scoreBoard.append(mentalHealth);
     } else {
-      increaseScore();
+      alert('The parent won this time!')
+      mentalHealth += 2;
+      $scoreBoard.append(mentalHealth);
     }
 
       }
-  const increaseScore =()=> {
-    mentalHealth += 2;
-    $result.append(mentalHealth);
-  }
-  const decreaseScore =()=> {
-    mentalHealth -= 2;
-    $result.append(mentalHealth);
-  }
+ 
 
 
   

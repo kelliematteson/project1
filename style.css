@@ -1,125 +1,17 @@
 
 body {
-  background-color: white;
+  background-color: lightseagreen;
 }
- /* The Modal (background) */
- .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-} 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  height: 600px;
-  width: 800px;
-  margin: auto;
+  width: 200px;
+  height: 200px;
 }
 #babyCard {
+  display: flex;
   height: 200px;
   width: 200px;
-  background-color: white;
-  border: 3px solid darkorchid;
-}
-.active{
-  color:white;
-  text-align: center;
-  font-family: fantasy;
-}
-#score {
-  background-color: lightblue;
-  position: fixed;
-  left: 0;
-  width: 200px;
-  height: 200px;
-  color: black;
-  font-family: monospace;
-  font-size: 16px;
   border: 2px solid black;
+  background-color: magenta;
 }
-.baby {
-	pointer-events: none;
-}
-.baby > * {
-  /* Adjust animation duration to change the element’s speed */
-          animation: fly 50s linear infinite;
-          pointer-events: none !important;
-    top: 0;
-    left: 0;
-    transform: translateX(-120%) translateY(-120%) rotateZ(0);
-    position: fixed;
-    animation-delay: 1s;
-    z-index: 999999;
-  }
-  
-   /* Keyframe values control where the element will begin
-      and end its trajectory across the screen. Each rule
-      represents a path the element follows across the screen. */
-  
-  
-  @keyframes fly {
-  
-    98.001%, 0% {
-                  display: block;
-      transform: translateX(-200%) translateY(100vh) rotateZ(0deg)
-    }
-  
-    15% {
-      transform: translateX(100vw) translateY(-100%) rotateZ(180deg)
-    }
-  
-    15.001%, 18% {
-      transform: translateX(100vw) translateY(-30%) rotateZ(0deg)
-    }
-  
-    40% {
-      transform: translateX(-200%) translateY(3vh) rotateZ(-180deg)
-    }
-  
-    40.001%, 43% {
-      transform: translateX(-200%) translateY(-100%) rotateZ(-180deg)
-    }
-  
-    65% {
-      transform: translateX(100vw) translateY(50vh) rotateZ(0deg)
-    }
-  
-    65.001%, 68% {
-      transform: translateX(20vw) translateY(-200%) rotateZ(180deg)
-    }
-  
-    95% {
-      transform: translateX(10vw) translateY(100vh) rotateZ(0deg)
-    }
-  }
